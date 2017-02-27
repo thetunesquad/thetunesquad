@@ -29,6 +29,7 @@
   "homepage": "https://github.com/thetunesquad/thetunesquad#readme",
   "dependencies": {
     "express": "^4.14.1",
+    "pg": "^6.1.2",
     "querystring": "^0.2.0",
     "request": "^2.79.0"
   }
