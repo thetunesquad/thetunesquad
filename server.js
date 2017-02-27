@@ -15,5 +15,5 @@ app.use(express.static('./public'));
 app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
 
 app.listen(PORT, function() {
-  console.log(`Portfolio is being served at ${PORT}`);
+  console.log(`THE TUNE SQUAD is being served at ${PORT}`);
 });
