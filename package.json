@@ -1,0 +1,36 @@
+{
+  "name": "thetunesquad",
+  "version": "1.0.0",
+  "description": "CodeFellows 301 group project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thetunesquad/thetunesquad.git"
+  },
+  "keywords": [
+    "codefellows",
+    "spotify",
+    "301",
+    "allie",
+    "christina",
+    "alex",
+    "kyle",
+    "groupproject"
+  ],
+  "author": "TheTuneSquad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thetunesquad/thetunesquad/issues"
+  },
+  "homepage": "https://github.com/thetunesquad/thetunesquad#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "pg": "^6.1.2",
+    "querystring": "^0.2.0",
+    "request": "^2.79.0"
+  }
+}
