@@ -32,13 +32,17 @@ client.connect();
 app.use(express.static('./public'))
    .use(cookieParser());
 
+app.get('/', (request, response) => response.sendFile('index.html', {root: './public'}));
+app.get('/results', (request, response) => response.sendFile('index.html', {root: './public'}));
+app.get('/about', (request, response) => response.sendFile('index.html', {root: './public'}));
+
 app.get('/login', function(req, res) {
 
   let state = generateRandomString(16);
   res.cookie(stateKey, state);
 
  // your application requests authorization
-  var scope = 'user-read-private user-read-email';
+  let scope = 'user-read-private user-read-email';
   res.redirect('https://accounts.spotify.com/authorize?' +
    querystring.stringify({
      response_type: 'code',
@@ -54,9 +58,9 @@ app.get('/callback', function(req, res) {
   // your application requests refresh and access tokens
   // after checking the state parameter
 
-  var code = req.query.code || null;
-  var state = req.query.state || null;
-  var storedState = req.cookies ? req.cookies[stateKey] : null;
+  let code = req.query.code || null;
+  let state = req.query.state || null;
+  let storedState = req.cookies ? req.cookies[stateKey] : null;
 
   if (state === null || state !== storedState) {
     res.redirect('/#' +
@@ -65,7 +69,7 @@ app.get('/callback', function(req, res) {
       }));
   } else {
     res.clearCookie(stateKey);
-    var authOptions = {
+    let authOptions = {
       url: 'https://accounts.spotify.com/api/token',
       form: {
         code: code,
@@ -81,10 +85,10 @@ app.get('/callback', function(req, res) {
     request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
 
-        var access_token = body.access_token,
+        let access_token = body.access_token,
           refresh_token = body.refresh_token;
 
-        var options = {
+        let options = {
           url: 'https://api.spotify.com/v1/me',
           headers: { 'Authorization': 'Bearer ' + access_token },
           json: true
@@ -114,8 +118,8 @@ app.get('/callback', function(req, res) {
 app.get('/refresh_token', function(req, res) {
 
   // requesting access token from refresh token
-  var refresh_token = req.query.refresh_token;
-  var authOptions = {
+  let refresh_token = req.query.refresh_token;
+  let authOptions = {
     url: 'https://accounts.spotify.com/api/token',
     headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
     form: {
@@ -127,7 +131,7 @@ app.get('/refresh_token', function(req, res) {
 
   request.post(authOptions, function(error, response, body) {
     if (!error && response.statusCode === 200) {
-      var access_token = body.access_token;
+      let access_token = body.access_token;
       res.send({
         'access_token': access_token
       });
@@ -135,9 +139,6 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-app.get('/', (request, response) => response.sendFile('index.html', {root: './public'}));
-app.get('/results', (request, response) => response.sendFile('index.html', {root: './public'}));
-app.get('/about', (request, response) => response.sendFile('index.html', {root: './public'}));
 
 
 app.listen(PORT, function() {
