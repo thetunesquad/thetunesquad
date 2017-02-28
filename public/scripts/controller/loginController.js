@@ -8,7 +8,7 @@
     $('#login').show();
     $('#testbutton').on('click', function()
      {
-        window.open("/login", "_self", "width=200,height=100");
+      window.open('/login', '_self');
     });
   };
 

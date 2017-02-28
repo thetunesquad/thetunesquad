@@ -34,12 +34,12 @@ app.use(express.static('./public'))
 
 app.get('/login', function(req, res) {
 
- let state = generateRandomString(16);
- res.cookie(stateKey, state);
+  let state = generateRandomString(16);
+  res.cookie(stateKey, state);
 
  // your application requests authorization
- var scope = 'user-read-private user-read-email';
- res.redirect('https://accounts.spotify.com/authorize?' +
+  var scope = 'user-read-private user-read-email';
+  res.redirect('https://accounts.spotify.com/authorize?' +
    querystring.stringify({
      response_type: 'code',
      client_id: client_id,
@@ -82,7 +82,7 @@ app.get('/callback', function(req, res) {
       if (!error && response.statusCode === 200) {
 
         var access_token = body.access_token,
-            refresh_token = body.refresh_token;
+          refresh_token = body.refresh_token;
 
         var options = {
           url: 'https://api.spotify.com/v1/me',
