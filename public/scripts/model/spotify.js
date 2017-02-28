@@ -74,15 +74,15 @@ function unique() {
   return AJSliced;
 }
 
-const trackId = [];
+const trackData = [];
 
 function ajaxGetTracks() {
   artistId.forEach(function(id) {
     $.ajax({
       url: `https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`,
       success: function (response) {
-        trackId.push(response.tracks[0].id);
-        console.log(trackId);
+        trackData.push( response.tracks[0].artists[0].name, response.tracks[0].name, response.tracks[0].id);
+        console.log(trackData);
       }
     })
   })
