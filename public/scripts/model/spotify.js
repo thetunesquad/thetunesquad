@@ -6,6 +6,8 @@ const artist1artist2 = [];
 
 const artistId = [];
 
+const relatedArtists = [];
+
 var searchArtist1 = function (query1) {
   $.ajax({
     url: 'https://api.spotify.com/v1/search',
@@ -44,3 +46,30 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
   console.log(artistId);
 }, false);
 
+function relatedArtist() {
+  artistId.forEach(function (id){
+    $.ajax({
+      url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
+      success: function (response) {
+        //console.log(response);
+        relatedArtists.push(response.artists);
+        console.log(relatedArtists);
+      }
+    })
+  })
+}
+
+function unique() {
+  const AJ = [];
+  for (var i = 0; i < 10; i++) {
+    if(!AJ.includes(relatedArtists[0][i].id)) {
+      AJ.push(relatedArtists[0][i].id);
+    }
+    if(!AJ.includes(relatedArtists[1][i].id)) {
+      AJ.push(relatedArtists[1][i].id);
+    }
+  }
+  let AJSliced =  AJ.slice(0, 10);
+  console.log(AJSliced);
+  return AJSliced;
+}
