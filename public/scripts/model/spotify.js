@@ -42,8 +42,8 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
   e.preventDefault();
   searchArtist1($('#query1').val());
   searchArtist2($('#query2').val());
-  console.log(artist1artist2);
-  console.log(artistId);
+  // console.log(artist1artist2);
+  // console.log(artistId);
 }, false);
 
 function relatedArtist() {
@@ -53,7 +53,7 @@ function relatedArtist() {
       success: function (response) {
         //console.log(response);
         relatedArtists.push(response.artists);
-        console.log(relatedArtists);
+        // console.log(relatedArtists);
       }
     })
   })
@@ -70,6 +70,22 @@ function unique() {
     }
   }
   let AJSliced =  AJ.slice(0, 10);
-  console.log(AJSliced);
+  // console.log(AJSliced);
   return AJSliced;
 }
+
+const trackId = [];
+
+function ajaxGetTracks() {
+  $.ajax({
+    url: 'https://api.spotify.com/v1/artists/0C0XlULifJtAgn6ZNCW2eu/top-tracks?country=US',
+    success: function (response) {
+      //console.log(response);
+      trackId.push(response.tracks[0].id);
+      console.log(trackId);
+    }
+  })
+}
+
+
+ajaxGetTracks();
