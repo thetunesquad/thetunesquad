@@ -1,56 +1,40 @@
 'use strict';
 
-(function(module) {
-  const search = {};
-  
-  search.all = [];
-  
-  // var searchArtist = function(query) {
-  //   $('#artist-button').on('click', function(){
-  //     $.ajax({
-  //       url: 'https://api.spotify.com/v1/search',
-  //       data: {
-  //         q: $('#query').val(),
-  //         type: 'artist'
-  //       }.then(function (response) {
-  //         console.log(response);
-  //       })
-  //     });
-  //   })
-  // }
-  
-  var searchAlbums = function (query1) {
-    $.ajax({
-      url: 'https://api.spotify.com/v1/search',
-      data: {
-        q: query1,
-        type: 'artist',
-        limit: 1
-      },
-      success: function (response) {
-        console.log(response);
-      }
-    });  
-  };
-  
-  document.getElementById('search-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    searchAlbums($('#query1').val());
-    // searchAlbums($('#query2').val());
-    }, false);
+const search = {};
 
-  module.search = search;
-})(window);
+const artist1artist2 = [];
 
+var searchArtist1 = function (query1) {
+  $.ajax({
+    url: 'https://api.spotify.com/v1/search',
+    data: {
+      q: query1,
+      type: 'artist',
+      limit: 1
+    },
+    success: function (response) {
+      console.log(response);
+    }
+  });
+};
 
+var searchArtist2 = function (query2) {
+  $.ajax({
+    url: 'https://api.spotify.com/v1/search',
+    data: {
+      q: query2,
+      type: 'artist',
+      limit: 1
+    },
+    success: function (response) {
+      console.log(response);
+    }
+  });
+};
 
-// 
-// search.searchArtist = function(callback) {
-//   $('#artist-button').on('click', function(){
-//     $.ajax('https://api.spotify.com/v1/search?q=Muse&type=track,artist&market=US" -H "Accept: application/json" -H "Authorization: Bearer BQChzQfVMxMaGogdKH7Zx7Kn0yjxMddBm6-jJ-pkv9xcsEMtxtTui3dTiZjEp12nNj4Hz-W2PWzGdbaVwSVRGL3h4a6iG5la5nHx13Ld7CY_gPYlj_i7zz6kUmA6nvB4AxNFgEFUxVZG16-B-g')
-//     .then(searchResult => search.all = searchResult, err => console.error(err))
-//     .then(callback);
-//   });
-// }
-// console.log(search.all);
-// 
+document.getElementById('search-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  searchArtist1($('#query1').val());
+  searchArtist2($('#query2').val());
+}, false);
+
