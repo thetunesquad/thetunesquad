@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="styles/modules.css"></link>
     <link rel="stylesheet" type="text/css" href="styles/icons.css"></link>
     <script id="playlist-template" type="text/x-handlebars-template">
-      <li><a class="icon-play3" href="{{preview_url}}" target="_blank"></a>{{artists.0.name}} - {{name}}</li>
+      <li><a class="icon-play3" href="{{preview_url}}" target="popup" onclick="window.open('{{preview_url}}', 'popup', 'width=150, height=50'); return false;"></a>{{artists.0.name}} - {{name}}</li>
     </script>
   </head>
   <body>
