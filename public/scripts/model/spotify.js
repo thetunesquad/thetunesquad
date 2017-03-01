@@ -30,8 +30,13 @@ function searchArtist1(query1) {
     },
     async: false,
     success: function (response) {
-      artist1artist2.push(response.artists.items);
-      artist12Id.push(response.artists.items[0].id);
+      if(response.artists.items.length > 0) {
+        artist1artist2.push(response.artists.items);
+        artist12Id.push(response.artists.items[0].id);
+      } else {
+        alert('Sorry, one of the artists you entered doesn\'t match in our database. Please try again.');
+        window.location = '/';
+      }
     }
   })
   .done(function(){
@@ -44,21 +49,26 @@ function searchArtist1(query1) {
       },
       async: false,
       success: function (response) {
-        artist1artist2.push(response.artists.items);
-        artist12Id.push(response.artists.items[0].id);
+        if(response.artists.items.length > 0) {
+          artist1artist2.push(response.artists.items);
+          artist12Id.push(response.artists.items[0].id);
+        } else {
+          alert('Sorry, one of the artists you entered doesn\'t match in our database. Please try again.');
+          window.location = '/';
+        }
       }
-    });
+    })
   })
   .done(artist12Id.forEach(function (id){
-      $.ajax({
-        url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
-        async: false,
-        success: function (response) {
-          relatedArtists12.push(response.artists);
-          console.log(relatedArtists12);
-        }
-      })
-    }))
+    $.ajax({
+      url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
+      async: false,
+      success: function (response) {
+        relatedArtists12.push(response.artists);
+        console.log(relatedArtists12);
+      }
+    })
+  }))
   .done(function(){
     for (let i = 0; i < 10; i++) {
       if(!AJ.includes(relatedArtists12[0][i].id)) {
@@ -124,8 +134,8 @@ function searchArtist1(query1) {
     console.log(trackData);
   })
   u();
-  resultsController.init();
-};
+  resultsController.init()
+}
 
 
 
@@ -133,6 +143,3 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
   e.preventDefault();
   searchArtist1();
 }, false);
-
-//ajax calls in parallel, not in series
-//document.write instead of handlebars template
