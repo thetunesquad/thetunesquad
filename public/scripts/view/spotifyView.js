@@ -7,6 +7,7 @@
 //   templateRender(track);
 // };
 
+
 function u() {
   let render = Handlebars.compile($('#playlist-template').text());
   $('#playlist').append(
@@ -15,5 +16,5 @@ function u() {
 };
 
 $('#reset-button').on('click', function(){
-  
+
 })

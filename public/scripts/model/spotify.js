@@ -127,6 +127,8 @@ function searchArtist1(query1) {
   resultsController.init();
 };
 
+
+
 document.getElementById('search-form').addEventListener('submit', function (e) {
   e.preventDefault();
   searchArtist1();

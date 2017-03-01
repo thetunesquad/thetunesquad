@@ -9,6 +9,8 @@ const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
 const redirect_uri = 'https://thetunesquad.herokuapp.com/';
 
+let access_token = '';
+
 let generateRandomString = function(length) {
   let text = '';
   let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -85,7 +87,7 @@ app.get('/callback', function(req, res) {
     request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
 
-        let access_token = body.access_token,
+        access_token = body.access_token,
           refresh_token = body.refresh_token;
 
         let options = {
@@ -131,7 +133,7 @@ app.get('/refresh_token', function(req, res) {
 
   request.post(authOptions, function(error, response, body) {
     if (!error && response.statusCode === 200) {
-      let access_token = body.access_token;
+      access_token = body.access_token;
       res.send({
         'access_token': access_token
       });
