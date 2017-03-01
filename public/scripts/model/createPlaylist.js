@@ -1,6 +1,8 @@
 'use strict';
 
 let trackUri = [];
+let access_token = '';
+let client_id = '';
 
 function x(){
   trackData.forEach(function(track){
@@ -19,7 +21,7 @@ const doLogin = function(callback) {
 
 function createPlaylist() {
 	$.ajax({
-    url = 'https://api.spotify.com/v1/users/{client_id}/playlists',
+    url = 'https://api.spotify.com/v1/users/' + client_id + '/playlists',
 		method: 'POST',
 		data: JSON.stringify({
 			'name': name,
