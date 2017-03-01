@@ -13,3 +13,7 @@ function u() {
     trackData.map(render)
   );
 };
+
+$('#reset-button').on('click', function(){
+  
+})

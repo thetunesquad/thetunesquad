@@ -124,9 +124,13 @@ function searchArtist1(query1) {
     console.log(trackData);
   })
   u();
+  resultsController.init();
 };
 
 document.getElementById('search-form').addEventListener('submit', function (e) {
   e.preventDefault();
   searchArtist1();
 }, false);
+
+//ajax calls in parallel, not in series
+//document.write instead of handlebars template
