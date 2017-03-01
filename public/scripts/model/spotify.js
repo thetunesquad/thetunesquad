@@ -55,7 +55,7 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
 
 }, false);
 
-function getRelated12() {
+function q() {
   artist12Id.forEach(function (id){
     $.ajax({
       url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
@@ -67,7 +67,7 @@ function getRelated12() {
   })
 }
 
-function getUniqueAJ() {
+function w() {
   let AJ = [];
   for (var i = 0; i < 10; i++) {
     if(!AJ.includes(relatedArtists12[0][i].id)) {
@@ -82,7 +82,7 @@ function getUniqueAJ() {
   //return artistsAJId;
 }
 
-function getRelatedAJ() {
+function e() {
   artistsAJId.forEach(function (id){
     $.ajax({
       url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
@@ -94,7 +94,7 @@ function getRelatedAJ() {
   })
 }
 
-function getUniqueA1J5() {
+function r() {
   relatedArtistsAJ.forEach(function(element) {
     let truncated = element.slice(0,5);
     truncated.map(function(artist) {
@@ -106,7 +106,7 @@ function getUniqueA1J5() {
 
 let allId = [];
 
-function mergeArray() {
+function t() {
   artist12Id.forEach(function(id){
     allId.push(id);
   })
@@ -121,7 +121,7 @@ function mergeArray() {
 }
 
 
-function ajaxGetTracks() {
+function y() {
   allId.forEach(function(id) {
     $.ajax({
       url: `https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`,
