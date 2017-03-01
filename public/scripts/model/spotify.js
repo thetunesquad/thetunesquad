@@ -4,15 +4,17 @@ const search = {};
 
 const artist1artist2 = [];
 
-const artist12Id = [];
+let artist12Id = [];
 
 const relatedArtists12 = [];
 
 const relatedArtistsAJ = [];
 
-const artistsA1J5Id = [];
+let artistsA1J5Id = [];
 
 let artistsAJId = [];
+
+const trackData = [];
 
 var searchArtist1 = function (query1) {
   $.ajax({
@@ -102,19 +104,35 @@ function getUniqueA1J5() {
   console.log(artistsA1J5Id);
 }
 
-const trackData = [];
+let allId = [];
+
+function mergeArray() {
+  artist12Id.forEach(function(id){
+    allId.push(id);
+  })
+
+  artistsAJId.forEach(function(id){
+    allId.push(id);
+  })
+
+  artistsA1J5Id.forEach(function(id){
+    allId.push(id);
+  })
+}
+
 
 function ajaxGetTracks() {
-  artistId.forEach(function(id) {
+  allId.forEach(function(id) {
     $.ajax({
       url: `https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`,
       success: function (response) {
-        trackData.push( response.tracks[0].artists[0].name, response.tracks[0].name, response.tracks[0].id);
-        console.log(trackData);
+        trackData.push( response.tracks[0]);
       }
     })
   })
+  console.log(trackData);
 }
+
 
 
 // ajaxGetTracks();
