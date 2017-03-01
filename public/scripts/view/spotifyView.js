@@ -17,3 +17,14 @@ function u() {
 $('#reset-button').on('click', function(){
   
 })
+
+
+const spotifyView = {};
+
+spotifyView.resetButton = function() {
+  $('#reset-button').on('click', function(){
+    $('#playlist').empty();
+    $('#query1').empty();
+    $('#query2').empty();
+  })
+};
