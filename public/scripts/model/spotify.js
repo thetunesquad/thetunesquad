@@ -50,6 +50,7 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
   searchArtist2($('#query2').val());
   console.log(artist1artist2);
   console.log(artist12Id);
+
 }, false);
 
 function getRelated12() {
@@ -100,3 +101,20 @@ function getUniqueA1J5() {
   })
   console.log(artistsA1J5Id);
 }
+
+const trackData = [];
+
+function ajaxGetTracks() {
+  artistId.forEach(function(id) {
+    $.ajax({
+      url: `https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`,
+      success: function (response) {
+        trackData.push( response.tracks[0].artists[0].name, response.tracks[0].name, response.tracks[0].id);
+        console.log(trackData);
+      }
+    })
+  })
+}
+
+
+// ajaxGetTracks();
