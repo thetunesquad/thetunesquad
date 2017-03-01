@@ -108,15 +108,21 @@ let allId = [];
 
 function t() {
   artist12Id.forEach(function(id){
-    allId.push(id);
+    if (!allId.includes(id)){
+      allId.push(id);
+    }
   })
 
   artistsAJId.forEach(function(id){
-    allId.push(id);
+    if (!allId.includes(id)){
+      allId.push(id);
+    }
   })
 
   artistsA1J5Id.forEach(function(id){
-    allId.push(id);
+    if (!allId.includes(id)){
+      allId.push(id);
+    }
   })
 }
 
