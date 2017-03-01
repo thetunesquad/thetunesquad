@@ -1,0 +1,29 @@
+button {
+  font-family: "Helvetica Neue";
+  font-size: 1em;
+}
+
+input {
+  font-family: "Helvetica Neue";
+  font-size: 1em;
+}
+
+.main-nav {
+  display: flex;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: space-around;
+  margin: .5em;
+  width: 100%;
+}
+
+.main-nav li {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab-content {
+  clear: left;
+}
