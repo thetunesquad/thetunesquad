@@ -131,3 +131,6 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
   e.preventDefault();
   searchArtist1();
 }, false);
+
+//ajax calls in parallel, not in series
+//document.write instead of handlebars template
