@@ -4,15 +4,17 @@ const search = {};
 
 const artist1artist2 = [];
 
-const artist12Id = [];
+let artist12Id = [];
 
 const relatedArtists12 = [];
 
 const relatedArtistsAJ = [];
 
-const artistsA1J5Id = [];
+let artistsA1J5Id = [];
 
 let artistsAJId = [];
+
+const trackData = [];
 
 var searchArtist1 = function (query1) {
   $.ajax({
@@ -53,7 +55,7 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
 
 }, false);
 
-function getRelated12() {
+function q() {
   artist12Id.forEach(function (id){
     $.ajax({
       url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
@@ -65,7 +67,7 @@ function getRelated12() {
   })
 }
 
-function getUniqueAJ() {
+function w() {
   let AJ = [];
   for (var i = 0; i < 10; i++) {
     if(!AJ.includes(relatedArtists12[0][i].id)) {
@@ -80,7 +82,7 @@ function getUniqueAJ() {
   //return artistsAJId;
 }
 
-function getRelatedAJ() {
+function e() {
   artistsAJId.forEach(function (id){
     $.ajax({
       url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
@@ -92,7 +94,7 @@ function getRelatedAJ() {
   })
 }
 
-function getUniqueA1J5() {
+function r() {
   relatedArtistsAJ.forEach(function(element) {
     let truncated = element.slice(0,5);
     truncated.map(function(artist) {
@@ -102,19 +104,35 @@ function getUniqueA1J5() {
   console.log(artistsA1J5Id);
 }
 
-const trackData = [];
+let allId = [];
 
-function ajaxGetTracks() {
-  artistId.forEach(function(id) {
+function t() {
+  artist12Id.forEach(function(id){
+    allId.push(id);
+  })
+
+  artistsAJId.forEach(function(id){
+    allId.push(id);
+  })
+
+  artistsA1J5Id.forEach(function(id){
+    allId.push(id);
+  })
+}
+
+
+function y() {
+  allId.forEach(function(id) {
     $.ajax({
       url: `https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`,
       success: function (response) {
-        trackData.push( response.tracks[0].artists[0].name, response.tracks[0].name, response.tracks[0].id);
-        console.log(trackData);
+        trackData.push( response.tracks[0]);
       }
     })
   })
+  console.log(trackData);
 }
+
 
 
 // ajaxGetTracks();
