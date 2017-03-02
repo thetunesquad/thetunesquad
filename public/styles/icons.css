@@ -56,6 +56,7 @@
 }
 .icon-play3:before {
   content: "\ea1c";
+  color: #1DB954;
 }
 .icon-mail:before {
   content: "\ea83";
