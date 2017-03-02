@@ -134,6 +134,7 @@ function searchArtist1(query1) {
     console.log(trackData);
   })
   u();
+  x();
   resultsController.init()
 }
 
