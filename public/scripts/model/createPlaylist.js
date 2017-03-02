@@ -43,7 +43,7 @@ function createPlaylist(username, name, callback) {
 		method: 'POST',
 		data: JSON.stringify({
 			'name': name,
-			'public': false
+			'public': true
 		}),
 		dataType: 'json',
 		headers: {
@@ -88,7 +88,7 @@ $('#export-button').on('click', function(event) {
   event.stopPropagation();
   event.preventDefault();
   z();
-  console.log("working");
+  console.log('working');
   getUsername(function(username) {
     console.log('got username', username);
     createPlaylist(username, name, function(playlist) {
