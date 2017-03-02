@@ -6,13 +6,13 @@ let redirect_uri = '';
 let client_id = '';
 let name = '';
 
-function x(){
+function pushUri(){
   trackData.forEach(function(track){
     trackUri.push(track.uri);
   })
 }
 
-function z(){
+function getPlaylistName(){
   name = $('#playlist-name').val();
 }
 
@@ -33,7 +33,6 @@ function getUsername(callback) {
     }
   });
 }
-
 
 function createPlaylist(username, name, callback) {
 	console.log('createPlaylist', username, name);
@@ -64,7 +63,7 @@ function addTracksToPlaylist(username, playlist, tracks, callback) {
 	console.log('addTracksToPlaylist', username, playlist, tracks);
 	var url = 'https://api.spotify.com/v1/users/' + username +
 		'/playlists/' + playlist +
-		'/tracks'; // ?uris='+encodeURIComponent(tracks.join(','));
+		'/tracks';
 	$.ajax(url, {
 		method: 'POST',
 		data: JSON.stringify(tracks),
@@ -83,11 +82,10 @@ function addTracksToPlaylist(username, playlist, tracks, callback) {
 	});
 }
 
-
 $('#export-button').on('click', function(event) {
   event.stopPropagation();
   event.preventDefault();
-  z();
+  getPlaylistName();
   console.log("working");
   getUsername(function(username) {
     console.log('got username', username);
@@ -95,9 +93,6 @@ $('#export-button').on('click', function(event) {
       console.log('created playlist', playlist);
       addTracksToPlaylist(username, playlist, trackUri, function() {
         console.log('tracks added.');
-        $('#playlistlink').attr('href', 'spotify:user:'+username+':playlist:'+playlist);
-        $('#creating').hide();
-        $('#done').show();
       });
     });
   });
