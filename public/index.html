@@ -10,28 +10,26 @@
     <link rel="stylesheet" type="text/css" href="styles/modules.css"></link>
     <link rel="stylesheet" type="text/css" href="styles/icons.css"></link>
     <script id="playlist-template" type="text/x-handlebars-template">
-      <li></div><a class="icon-play3" href="{{preview_url}}" target="popup" onclick="window.open('{{preview_url}}', 'popup', 'width=150, height=50'); return false;"></a>{{artists.0.name}} - {{name}}</li>
+      <li id={{preview_url}} class="icon-play3"> {{artists.0.name}} - {{name}}</li>
     </script>
   </head>
   <body>
     <main class="content">
       <header>
-        <h1 class="inline-block">THE TUNE SQUAD!!!!!</h1>
-        <nav class="main-nav">
-          <ul class="ul">
+        <h1 class="inline-block left">THE TUNE SQUAD</h1>
+        <nav class="inline-block right">
+          <ul class="right">
             <li class="tab"><a href="/">Home</a></li>
             <li class="tab"><a href="/about">About Us</a></li>
-            <li class="log" id="login">Log In</li>
-            <li class="log" id="logout">Log Out</li>
           </ul>
         </nav>
       </header>
       <section class="tab-content" id="login">
-        <h2>login here</h2>
+        <h2>Login:</h2>
         <button id="testbutton">LOGIN</button>
       </section>
       <section class="tab-content" id="input">
-        <h2>input artists here</h2>
+        <h2>Who do you want to mix?</h2>
         <form id="search-form">
           <label>
             <input id="query1" type="text" name="artist1" placeholder="Lady Gaga" >
@@ -47,40 +45,53 @@
       <section class="tab-content" id="results">
         <div id="image1"><img id="image1appended" src=""></div>
         <div id="image2"><img id="image2appended" src=""></div>
+
+        <audio id="audio" src="" controls autoplay="true" paused="false">Audio player</audio>
+
         <h2>Playlist</h2>
         <ul id="playlist">
-
         </ul>
         <form>
-          <label>
+          <label id="playlist-label">
             <button id="reset-button">Reset Artists</button>
             <input id="playlist-name" type="text" name="playlist" placeholder="Playlist Name" >
             <button id="export-button">Export to Spotify</button>
           </label>
         </form>
+        <h2>Playlist</h2>
+        <ul id="playlist">
+
+        </ul>
       </section>
       <section class="tab-content" id="about">
-        <h2>about us here</h2>
-        <div>
-          <h3><a href="https://github.com/mypalal84">Alex Cahn</a></h3>
-          <p>My Recommended Mashup: Outkast &amp; Glass Animals<br></p>
+        <h2 class="text-center">About The Tune Squad</h2>
+        <div id="alex">
+          <a href="https://github.com/mypalal84"><h3 class="green">Alex Cahn</h3></a>
+          <h4>My Recommended Mashup: Outkast &amp; Glass Animals</h4>
+          <p></p>
         </div>
-        <div>
-          <h3><a href="https://github.com/agrampa">Allie Grampa</a></h3>
-          <p>My Recommended Mashup: Billy Joel &amp; Lady Gaga<br></p>
+        <div id="allie">
+          <a href="https://github.com/agrampa"><h3 class="green">Allie Grampa</h3></a>
+          <h4>My Recommended Mashup: Billy Joel &amp; Lady Gaga</h4>
+          <p></p>
         </div>
-        <div>
-          <h3><a href="https://github.com/cleex1004">Christina Lee</a></h3>
-          <p>My Recommended Mashup: Big Bang &amp; John Legend<br>Major K-POP lover, especially Big Bang, Christina likes to explore Seattle and find good places to eat. She also thinks that dogs are better than cats by far because cats are weird and kind of selfish. She is very particular but she usually has a logical reason why. She was previously working in real estate before joining Code Fellows and is excited to not deal with unrealistic people anymore. "Come say hi to me because I like meeting new interesting people!"</p>
+        <div id="christina">
+          <a href="https://github.com/cleex1004"><h3 class="green">Christina Lee</h3></a>
+          <h4>My Recommended Mashup: Big Bang &amp; John Legend</h4>
+          <p>Major K-POP lover, especially Big Bang, Christina likes to explore Seattle and find good places to eat. She also thinks that dogs are better than cats by far because cats are weird and kind of selfish. She is very particular but she usually has a logical reason why. She was previously working in real estate before joining Code Fellows and is excited to not deal with unrealistic people anymore. "Come say hi to me because I like meeting new interesting people!"</p>
         </div>
-        <div>
-          <h3><a href="https://github.com/khillman84">Kyle Hillman</a></h3>
-          <p>FMy Recommended Mashup: John Mayer &amp; Norah Jones<br></p>
+        <div id="kyle">
+          <a href="https://github.com/khillman84"><h3 class="green">Kyle Hillman</h3></a>
+          <h4>My Recommended Mashup: John Mayer &amp; Norah Jones</h4>
+          <p></p>
         </div>
       </section>
     </main>
     <footer>
-      <p class="text-center">Powered by Spotify</p>
+      <div class="flex">
+        <img class="inline-block" src="images/Spotify_Icon_Green.png" id="logo">
+        <p class="inline-block">Powered by Spotify</p>
+      </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
