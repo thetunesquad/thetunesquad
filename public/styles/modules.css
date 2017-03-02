@@ -12,24 +12,25 @@ nav ul, li {
   margin: .5em;
 }
 
-#playlist a:link {
-  color: #1DB954;
-  text-decoration: none;
+.artist-image {
+  height: 8em;
+  display: inline-block;
 }
 
-#playlist a:visited {
-  color: #1DB954;
-  text-decoration: none;
+.playlist-li {
+  font-family: "Helvetica Neue";
+  font-size: 1em;
 }
 
-#playlist a:hover {
-  color: #1DB954;
-  text-decoration: none;
+#image1appended {
+  max-width: 45% auto;
+  min-resolution: res;
+  float: left;
 }
 
-#playlist a:active {
-  color: #1DB954;
-  text-decoration: none;
+#image2appended {
+  max-width: 45% auto;
+  min-resolution: res;
 }
 
 #playlist-name {
