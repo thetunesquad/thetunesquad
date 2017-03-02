@@ -17,21 +17,21 @@ function z(){
 }
 
 function getUsername(callback) {
-	console.log('getUsername');
-	var url = 'https://api.spotify.com/v1/me';
-	$.ajax(url, {
-		dataType: 'json',
-		headers: {
-			'Authorization': 'Bearer ' + spotify.getAccessToken()
-		},
-		success: function(r) {
-			console.log('got username response', r);
-			callback(r.id);
-		},
-		error: function(r) {
-			callback(null);
-		}
-	});
+  console.log('getUsername');
+  var url = 'https://api.spotify.com/v1/me';
+  $.ajax(url, {
+    dataType: 'json',
+    headers: {
+      'Authorization': 'Bearer ' + spotify.getAccessToken()
+    },
+    success: function(r) {
+      console.log('got username response', r);
+      callback(r.id);
+    },
+    error: function(r) {
+      callback(null);
+    }
+  });
 }
 
 
