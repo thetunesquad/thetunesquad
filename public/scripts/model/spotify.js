@@ -127,7 +127,9 @@ function searchArtist1(query1) {
         url: `https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`,
         async: false,
         success: function (response) {
-          trackData.push( response.tracks[0]);
+          if (response.tracks[0]) {
+            trackData.push( response.tracks[0]);
+          }
         }
       })
     })
