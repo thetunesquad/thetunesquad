@@ -4,11 +4,8 @@
   const loginController = {};
 
   loginController.init = function() {
-    $('#login').show();
-    $('#testbutton').on('click', function()
-     {
-      window.open('/login', '_self');
-    });
+    $('#login').hide();
+    $('#input').show();
   };
 
   module.loginController = loginController;

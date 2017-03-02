@@ -135,8 +135,8 @@ function searchArtist1(query1) {
     })
     console.log(trackData);
   })
-  u();
-  x();
+  displayPlaylist();
+  pushUri();
   resultsController.init()
 }
 
