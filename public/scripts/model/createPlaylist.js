@@ -4,11 +4,16 @@ let trackUri = [];
 let access_token = '';
 let redirect_uri = '';
 let client_id = '';
+let name = '';
 
 function x(){
   trackData.forEach(function(track){
     trackUri.push(track.uri);
   })
+}
+
+function z(){
+  name = $('#playlist-name').val();
 }
 
 function getUsername(callback) {
@@ -82,6 +87,7 @@ function addTracksToPlaylist(username, playlist, tracks, callback) {
 $('#export-button').on('click', function(event) {
   event.stopPropagation();
   event.preventDefault();
+  z();
   console.log("working");
   getUsername(function(username) {
     console.log('got username', username);
