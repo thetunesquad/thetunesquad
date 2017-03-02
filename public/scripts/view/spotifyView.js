@@ -26,4 +26,3 @@ $('.icon-play3').on('click', function(e) {
   $('audio').attr('src', this.id);
   });
 };
-

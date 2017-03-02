@@ -136,9 +136,9 @@ function searchArtist1(query1) {
     console.log(trackData);
   })
   u();
+  x();
   resultsController.init()
 }
-
 
 document.getElementById('search-form').addEventListener('submit', function (e) {
   e.preventDefault();
