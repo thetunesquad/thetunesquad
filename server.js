@@ -7,9 +7,8 @@ const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
-const redirect_uri = 'https://thetunesquad.herokuapp.com/';
+const redirect_uri = 'http://localhost:7000/callback';
 
-let access_token = '';
 
 let generateRandomString = function(length) {
   let text = '';
@@ -56,7 +55,7 @@ app.get('/login', function(req, res) {
 });
 
 app.get('/callback', function(req, res) {
-
+console.log('/callback');
   // your application requests refresh and access tokens
   // after checking the state parameter
 
@@ -87,7 +86,7 @@ app.get('/callback', function(req, res) {
     request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
 
-        access_token = body.access_token,
+        let access_token = body.access_token,
           refresh_token = body.refresh_token;
 
         let options = {
@@ -98,7 +97,7 @@ app.get('/callback', function(req, res) {
 
         // use the access token to access the Spotify Web API
         request.get(options, function(error, response, body) {
-          console.log(response, body);
+          console.log(response.body.id);
         });
 
         // we can also pass the token to the browser to make requests from there
@@ -133,7 +132,7 @@ app.get('/refresh_token', function(req, res) {
 
   request.post(authOptions, function(error, response, body) {
     if (!error && response.statusCode === 200) {
-      access_token = body.access_token;
+      let access_token = body.access_token;
       res.send({
         'access_token': access_token
       });
