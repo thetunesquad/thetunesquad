@@ -5,7 +5,7 @@
 
   inputController.init = function() {
     $('.tab-content').hide();
-    // $('#input').show();
+    $('#input').show();
     $('#login').show();
     $('#testbutton').on('click', function()
      {
