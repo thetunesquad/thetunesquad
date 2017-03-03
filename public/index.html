@@ -34,8 +34,8 @@
           <h2>Who do you want to mix?</h2>
           <form id="search-form">
             <label>
-              <input id="query1" type="text" name="artist1" placeholder="Lady Gaga" >
-              <input id="query2" type="text" name="artist2" placeholder="Frank Sinatra" >
+              <input id="query1" type="text" name="artist1" placeholder="Lady Gaga" required>
+              <input id="query2" type="text" name="artist2" placeholder="Frank Sinatra" required>
               <input id="artist-button" class="color" value="GO!" type="submit">
             </label>
           </form>
@@ -55,7 +55,7 @@
         </ul>
         <form class="inline-block">
           <label id="playlist-label">
-            <input id="playlist-name" type="text" name="playlist" placeholder="Playlist Name" >
+            <input id="playlist-name" type="text" name="playlist" placeholder="Playlist Name" required>
             <button id="export-button" class="button">Export to Spotify</button>
             <button id="reset-button" class="button">Reset Artists</button>
           </label>
