@@ -11,24 +11,19 @@
     $('#playlist').append(
       trackData.map(render)
     );
-    spotifyView.playPreview();
-  };
-
-
-  spotifyView.resetButton = function() {
-    $('#reset-button').on('click', function(){
-      $('#playlist').empty();
-      $('#query1').empty();
-      $('#query2').empty();
-    })
-  };
-
-  spotifyView.playPreview = function() {
-    $('.icon-play3').on('click', function(e) {
-      console.log(this.id);
-      $('audio').attr('src', this.id);
-    });
   };
 
   module.spotifyView = spotifyView;
 })(window);
+
+$('#reset-button').on('click', function(){
+  page('/input');
+  $('#playlist').empty();
+  $('#query1').empty();
+  $('#query2').empty();
+});
+
+$('.icon-play3').on('click', function(e) {
+  console.log(this.id);
+  $('audio').attr('src', this.id);
+});
