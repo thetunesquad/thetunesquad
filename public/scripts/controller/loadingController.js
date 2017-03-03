@@ -4,8 +4,8 @@
   const loadingController = {};
 
   loadingController.init = function() {
+    //$('#loading').show();
     $('.tab-content').hide();
-    $('#loading').show();
     console.log('we are in the loading route');
     searchArtist1();
   };

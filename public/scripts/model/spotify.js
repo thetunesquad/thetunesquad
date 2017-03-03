@@ -138,7 +138,7 @@ function searchArtist1(query1) {
     displayPlaylist();
     pushUri();
     console.log('ajax call complete');
-    page('/results');
+    page.redirect('/results');
   })
 }
 
