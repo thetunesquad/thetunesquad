@@ -15,29 +15,32 @@
   </head>
   <body>
     <main class="content">
-      <header>
-        <h1 class="inline-block left">THE TUNE SQUAD</h1>
-        <nav class="inline-block right">
-          <ul class="right">
-            <li class="tab"><a href="/">Home</a></li>
-            <li class="tab"><a href="/about">About Us</a></li>
-          </ul>
-        </nav>
-      </header>
-      <section class="tab-content" id="login">
-        <h2>Login:</h2>
-        <button id="login-button">LOGIN</button>
-      </section>
-      <section class="tab-content" id="input">
-        <h2>Who do you want to mix?</h2>
-        <form id="search-form">
-          <label>
-            <input id="query1" type="text" name="artist1" placeholder="Lady Gaga" >
-            <input id="query2" type="text" name="artist2" placeholder="Frank Sinatra" >
-            <input id="artist-button" type="submit" value="GO!">
-          </label>
-        </form>
-      </section>
+
+      <div class="green-background">
+        <header>
+          <h1 class="inline-block left">THE TUNE SQUAD</h1>
+          <nav class="inline-block right">
+            <ul class="right">
+              <li class="tab"><a href="/">Home</a></li>
+              <li class="tab"><a href="/about">About Us</a></li>
+            </ul>
+          </nav>
+        </header>
+        <section class="tab-content center" id="login">
+          <!-- <h2>Login:</h2> -->
+          <button id="login-button" class="color">LOGIN</button>
+        </section>
+        <section class="tab-content center" id="input">
+          <h2>Who do you want to mix?</h2>
+          <form id="search-form">
+            <label>
+              <input id="query1" type="text" name="artist1" placeholder="Lady Gaga" >
+              <input id="query2" type="text" name="artist2" placeholder="Frank Sinatra" >
+              <input id="artist-button" class="color" value="GO!" type="submit">
+            </label>
+          </form>
+        </section>
+      </div>
       <section class="tab-content" id="loading">
         <h2>loading gif here</h2>
         <img src="/images/loading.gif"/>
@@ -47,6 +50,7 @@
         <div id="image2"><img id="image2appended" class="artist-image" src=""></div>
         <audio id="audio" src="" controls autoplay="true" paused="false">Audio player</audio>
         <h2>Playlist</h2>
+        <p>Click on a song to hear a preview</p>
         <ul id="playlist">
         </ul>
         <form>

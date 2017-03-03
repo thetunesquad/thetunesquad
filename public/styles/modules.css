@@ -26,6 +26,7 @@ nav ul, li {
   max-width: 45% auto;
   min-resolution: res;
   float: left;
+  margin-right: 1em;
 }
 
 #image2appended {
@@ -63,4 +64,14 @@ nav ul, li {
 #logo {
   height: 1em;
   margin-right: .5em;
+}
+
+.color:hover {
+  background: black;
+  color: white;
+}
+
+.color {
+  background-color: darkslategrey;
+  color: white;
 }
