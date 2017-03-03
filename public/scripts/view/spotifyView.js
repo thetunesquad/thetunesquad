@@ -17,10 +17,10 @@
 })(window);
 
 $('#reset-button').on('click', function(){
-  page('/input');
   $('#playlist').empty();
   $('#query1').empty();
   $('#query2').empty();
+  page('/input');
 });
 
 $('.icon-play3').on('click', function(e) {
