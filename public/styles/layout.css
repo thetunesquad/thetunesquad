@@ -18,9 +18,8 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  /*margin-left: 5%;
+  margin-right: 5%;*/
 }
 
 footer {
@@ -31,7 +30,7 @@ footer div {
   justify-content: center;
 }
 
-footer p, img {
+footer p{
   align-items: center;
 }
 
@@ -45,6 +44,14 @@ footer p, img {
 
 .inline-block {
   display: inline-block;
+}
+
+.spotify-inline-block {
+  display: inline-block;
+}
+
+.header-width {
+  width: 20%;
 }
 
 .block {
@@ -67,6 +74,10 @@ footer p, img {
   float: left;
 }
 
+.spacing {
+  padding: 0 0 0 27%;
+}
+
 .center {
   text-align: center;
 }
@@ -75,17 +86,36 @@ footer p, img {
   margin-top: 5em;
 }
 
-@media only screen and (min-width: 414px) {
+#image1, #image2 {
+  width: 50%;
+}
+
+@media only screen and (min-width: 374px) {
   #query1, #query2 {
     padding: 2em;
     margin: 1em;
+  }
+
+  *{
+    border: 2px solid red;
+  }
+/*
+  .inline-block {
+    display: block;
+    width: 100%;
+    padding: 5%;
+    margin: 0 0 0 5%;
+  }*/
+
+  .left {
+    float: none;
   }
   button {
     padding: 2em;
     border-radius: 15px;
   }
 }
-
+/*
 @media only screen and (max-width: 413px) {
   #image1, #image2 {
     display: block;
@@ -94,4 +124,4 @@ footer p, img {
     float: none;
     clear: both;
   }
-}
+}*/

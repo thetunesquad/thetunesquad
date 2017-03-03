@@ -18,10 +18,10 @@
 
       <div class="green-background">
         <header>
-          <h1 class="inline-block left">THE TUNE SQUAD</h1>
-          <nav class="inline-block right">
-            <ul class="right">
-              <li class="tab reset"><a href="/">Home</a></li>
+          <h1 class="inline-block  header-width left">THE TUNE SQUAD</h1>
+          <nav class="inline-block spacing left">
+            <ul>
+              <li class="tab"><a href="/">Home</a></li>
               <li class="tab"><a href="/about">About Us</a></li>
             </ul>
           </nav>
@@ -49,15 +49,15 @@
         <div id="image1"><img id="image1appended" class="artist-image" src=""></div>
         <div id="image2"><img id="image2appended" class="artist-image" src=""></div>
         <audio id="audio" src="" controls autoplay="true" paused="false">Audio player</audio>
-        <h2>Playlist</h2>
-        <p>Click on a song to hear a preview</p>
+        <h2 class="center">Playlist</h2>
+        <p class="center">Click on a song to hear a preview</p>
         <ul id="playlist">
         </ul>
-        <form>
+        <form class="inline-block">
           <label id="playlist-label">
-            <button id="reset-button" class="reset">Reset Artists</button>
             <input id="playlist-name" type="text" name="playlist" placeholder="Playlist Name" >
-            <button id="export-button">Export to Spotify</button>
+            <button id="export-button" class="button">Export to Spotify</button>
+            <button id="reset-button" class="button">Reset Artists</button>
           </label>
         </form>
       </section>
@@ -88,7 +88,7 @@
     </main>
     <footer>
       <div class="flex">
-        <img class="inline-block" src="/images/Spotify_Icon_Green.png" id="logo">
+        <img class="spotify-inline-block" src="/images/Spotify_Icon_Green.png" id="logo">
         <p class="inline-block">Powered by Spotify</p>
       </div>
     </footer>

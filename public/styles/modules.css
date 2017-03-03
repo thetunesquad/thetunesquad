@@ -12,10 +12,10 @@ nav ul, li {
   margin: .5em;
 }
 
-.artist-image {
+/*.artist-image {
   height: 8em;
   display: inline-block;
-}
+}*/
 
 .playlist-li {
   font-family: "Helvetica Neue";
@@ -23,24 +23,39 @@ nav ul, li {
 }
 
 #image1appended {
-  max-width: 45% auto;
+  /*max-width: 45% auto;
   min-resolution: res;
   float: left;
-  margin-right: 1em;
+  margin-right: 1em;*/
+  width: 200%;
 }
 
 #image2appended {
-  max-width: 45% auto;
-  min-resolution: res;
+  /*max-width: 45% auto;
+  min-resolution: res;*/
+  width: 200%;
 }
 
 #playlist-name {
-  margin-left: .5em;
+  margin-left: 2.3em;
   margin-right: .5em;
+  margin-bottom: .5em;
+  padding: 2em;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.button {
+  margin: 0 0 2% 12%;
+  width: 75%;
+}
+
+#query1, #query2 {
+  text-align: center;
 }
 
 #playlist-label {
-  display: flex;
+  /*display: flex;*/
   justify-content: center;
 }
 
@@ -74,4 +89,9 @@ nav ul, li {
 .color {
   background-color: darkslategrey;
   color: white;
+}
+
+#audio {
+  margin: 0 0 0 25%;
+  width: 50%;
 }
