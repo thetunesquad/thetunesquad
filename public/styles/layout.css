@@ -28,6 +28,7 @@ footer {
 
 footer div {
   justify-content: center;
+  display: flex;
 }
 
 footer p{
@@ -49,10 +50,10 @@ footer p{
 .spotify-inline-block {
   display: inline-block;
 }
-
+/*
 .header-width {
   width: 20%;
-}
+}*/
 
 .block {
   display: block;
@@ -74,20 +75,20 @@ footer p{
   float: left;
 }
 
-.spacing {
-  padding: 0 0 0 27%;
-}
+/*.spacing {
+  padding: 0 0 0 50%;
+}*/
 
 .center {
   text-align: center;
 }
 
-#login {
-  margin-top: 5em;
+.text-right {
+  text-align: right;
 }
 
-#image1, #image2 {
-  width: 50%;
+#login {
+  margin-top: 2.5em;
 }
 
 @media only screen and (min-width: 374px) {
@@ -95,10 +96,10 @@ footer p{
     padding: 2em;
     margin: 1em;
   }
-
+/*
   *{
     border: 2px solid red;
-  }
+  }*/
 /*
   .inline-block {
     display: block;
@@ -111,8 +112,8 @@ footer p{
     float: none;
   }
   button {
-    padding: 2em;
-    border-radius: 15px;
+    padding: 1.5em;
+    border-radius: 5px;
   }
 }
 /*

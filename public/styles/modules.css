@@ -3,51 +3,97 @@
   margin-top: 1em;
 }
 
-header h1, nav {
+header h1 {
   align-self: center;
 }
 
-nav ul, li {
+header nav {
+  align-self: center;
+  margin-left: 71%;
+  width: 100%;
+}
+
+#nav-div {
+  display: flex;
+  width: 100%;
+}
+
+nav ul {
   display: flex;
   margin: .5em;
 }
 
-/*.artist-image {
-  height: 8em;
-  display: inline-block;
-}*/
-
-.playlist-li {
-  font-family: "Helvetica Neue";
-  font-size: 1em;
+nav li {
+  display: inline-flex;
+  margin: .5em 0;
+  margin-left: 1em;
+  font-size: 1.5em;
 }
 
-#image1appended {
-  /*max-width: 45% auto;
-  min-resolution: res;
-  float: left;
-  margin-right: 1em;*/
-  width: 200%;
+#click-to-hear {
+  margin: 1em;
 }
 
-#image2appended {
-  /*max-width: 45% auto;
-  min-resolution: res;*/
-  width: 200%;
-}
-
-#playlist-name {
-  margin-left: 2.3em;
-  margin-right: .5em;
-  margin-bottom: .5em;
-  padding: 2em;
-  text-align: center;
+#artist-button {
+  padding: 20px;
+  border-radius: 4px;
   border: 1px solid black;
 }
 
+#loading h1 {
+  font-size: 2.75em;
+}
+
+#load-pic {
+  max-width: 30%;
+  margin-left: 35%;
+  margin-top: 2em;
+}
+
+.artist-image {
+ height: 11.5em;
+ margin: 1em 1em 0 1em;
+}
+
+#audio {
+  margin: 0 0 0 25%;
+  width: 50%;
+}
+
+#playlist {
+  margin: 0 0 0 28%;
+}
+
+#play-li {
+  display: inline-block;
+}
+
+/*.playlist-li {
+  font-family: "Helvetica Neue";
+  font-size: 1em;
+}*/
+
+#playlist-name {
+  /*margin-left: 2.3em;
+  margin-right: .5em;
+  margin-bottom: .5em;*/
+  padding: 2em;
+  text-align: center;
+  border: 1px solid black;
+  justify-content: space-between;
+  margin: 0 1em 0 1em;
+}
+
 .button {
-  margin: 0 0 2% 12%;
-  width: 75%;
+  /*margin: 0 0 2% 12%;*/
+  width: 15em;
+  text-align: center;
+  justify-content: space-between;
+}
+
+#export-form {
+  /*width: 100%;*/
+  display: flex;
 }
 
 #query1, #query2 {
@@ -55,8 +101,18 @@ nav ul, li {
 }
 
 #playlist-label {
-  /*display: flex;*/
-  justify-content: center;
+  display: flex;
+  width: auto;
+  margin: 0 auto;
+  /*justify-content: space-between;*/
+}
+
+#about {
+  margin: 2em;
+}
+
+#about-title {
+  font-size: 2em;
 }
 
 #group-pic {
@@ -64,6 +120,7 @@ nav ul, li {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1.5em;
 }
 
 #about h2, h3, h4 {
@@ -77,8 +134,9 @@ nav ul, li {
 }
 
 #logo {
-  height: 1em;
+  height: 1.2em;
   margin-right: .5em;
+  align-items: center;
 }
 
 .color:hover {
@@ -89,9 +147,4 @@ nav ul, li {
 .color {
   background-color: darkslategrey;
   color: white;
-}
-
-#audio {
-  margin: 0 0 0 25%;
-  width: 50%;
 }
