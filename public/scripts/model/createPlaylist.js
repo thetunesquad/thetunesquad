@@ -22,7 +22,7 @@ function getUsername(callback) {
   $.ajax(url, {
     dataType: 'json',
     headers: {
-      'Authorization': 'Bearer ' + spotify.getAccessToken()
+      'Authorization': 'Bearer ' + token
     },
     success: function(r) {
       console.log('got username response', r);
@@ -46,7 +46,7 @@ function createPlaylist(username, name, callback) {
 		}),
 		dataType: 'json',
 		headers: {
-			'Authorization': 'Bearer ' + spotify.getAccessToken(),
+			'Authorization': 'Bearer ' + token,
 			'Content-Type': 'application/json'
 		},
 		success: function(r) {
@@ -69,15 +69,17 @@ function addTracksToPlaylist(username, playlist, tracks, callback) {
 		data: JSON.stringify(tracks),
 		dataType: 'text',
 		headers: {
-			'Authorization': 'Bearer ' + spotify.getAccessToken(),
+			'Authorization': 'Bearer ' + token,
 			'Content-Type': 'application/json'
 		},
 		success: function(r) {
 			console.log('add track response', r);
 			callback(r.id);
+      alert('Playlist created successfully. It is now in your Spotify library!');
 		},
 		error: function(r) {
 			callback(null);
+      alert('Playlist was not created. Please refresh your browser and try again.');
 		}
 	});
 }

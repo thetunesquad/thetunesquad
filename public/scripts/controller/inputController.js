@@ -4,13 +4,20 @@
   const inputController = {};
 
   inputController.init = function() {
+    //$('#loading').hide();
     $('.tab-content').hide();
     $('#input').show();
-    $('#login').show();
-    $('#testbutton').on('click', function()
-     {
-      window.open('/login', '_self');
+    console.log('we are in the input route');
+    $('#search-form').submit(function(e) {
+      e.preventDefault();
+      page('/loading');
     });
+
+    $('#artist-button').on('click', function(e){
+      //e.preventDefault();
+      $('#input').hide();
+      //searchArtist1();
+    })
   };
 
   module.inputController = inputController;
