@@ -7,7 +7,8 @@ const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
-const redirect_uri = 'http://localhost:7000/callback';
+const redirect_uri = process.env.REDIRECT_URI;
+//const redirect_uri = 'http://localhost:7000/input';
 
 
 let generateRandomString = function(length) {
@@ -33,9 +34,6 @@ client.connect();
 app.use(express.static('./public'))
    .use(cookieParser());
 
-app.get('/', (request, response) => response.sendFile('index.html', {root: './public'}));
-app.get('/results', (request, response) => response.sendFile('index.html', {root: './public'}));
-app.get('/about', (request, response) => response.sendFile('index.html', {root: './public'}));
 
 app.get('/login', function(req, res) {
 
@@ -101,11 +99,7 @@ console.log('/callback');
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('/#' +
-          querystring.stringify({
-            access_token: access_token,
-            refresh_token: refresh_token
-          }));
+        res.redirect('/token/' + access_token)
       } else {
         res.redirect('/#' +
           querystring.stringify({
@@ -140,7 +134,7 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-
+app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
 
 app.listen(PORT, function() {
   console.log(`THE TUNE SQUAD is being served at ${PORT}`);

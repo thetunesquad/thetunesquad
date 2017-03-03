@@ -4,8 +4,12 @@
   const loginController = {};
 
   loginController.init = function() {
-    $('#login').hide();
-    $('#input').show();
+    $('.tab-content').hide();
+    $('#login').show();
+    $('#login-button').on('click', function()
+     {
+      window.open('/login', '_self');
+    });
   };
 
   module.loginController = loginController;

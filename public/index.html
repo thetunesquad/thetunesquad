@@ -4,17 +4,18 @@
     <meta charset="utf-8">
     <title>The Tune Squad</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles/reset.css"></link>
-    <link rel="stylesheet" type="text/css" href="styles/base.css"></link>
-    <link rel="stylesheet" type="text/css" href="styles/layout.css"></link>
-    <link rel="stylesheet" type="text/css" href="styles/modules.css"></link>
-    <link rel="stylesheet" type="text/css" href="styles/icons.css"></link>
+    <link rel="stylesheet" type="text/css" href="/styles/reset.css"></link>
+    <link rel="stylesheet" type="text/css" href="/styles/base.css"></link>
+    <link rel="stylesheet" type="text/css" href="/styles/layout.css"></link>
+    <link rel="stylesheet" type="text/css" href="/styles/modules.css"></link>
+    <link rel="stylesheet" type="text/css" href="/styles/icons.css"></link>
     <script id="playlist-template" type="text/x-handlebars-template">
       <li id={{preview_url}} class="icon-play3"><div class="playlist-li"> {{artists.0.name}} - {{name}}</div></li>
     </script>
   </head>
   <body>
     <main class="content">
+
       <div class="green-background">
         <header>
           <h1 class="inline-block left">THE TUNE SQUAD</h1>
@@ -35,7 +36,7 @@
             <label>
               <input id="query1" type="text" name="artist1" placeholder="Lady Gaga" >
               <input id="query2" type="text" name="artist2" placeholder="Frank Sinatra" >
-              <button id="artist-button" class="color" input type="submit">GO!</button>
+              <input id="artist-button" class="color" value="GO!" type="submit">
             </label>
           </form>
         </section>
@@ -62,7 +63,7 @@
       </section>
       <section class="tab-content" id="about">
         <h2 class="text-center">About The Tune Squad</h2>
-        <img id="group-pic" src="images/crop-pic-3.png">
+        <img id="group-pic" src="/images/crop-pic-3.png">
         <div id="alex">
           <a href="https://github.com/mypalal84"><h3 class="green">Alex Cahn</h3></a>
           <h4>My Recommended Mashup: Outkast &amp; Glass Animals</h4>
@@ -87,21 +88,22 @@
     </main>
     <footer>
       <div class="flex">
-        <img class="inline-block" src="images/Spotify_Icon_Green.png" id="logo">
+        <img class="inline-block" src="/images/Spotify_Icon_Green.png" id="logo">
         <p class="inline-block">Powered by Spotify</p>
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
-    <script type="text/javascript" src="scripts/model/spotify.js"></script>
-    <script type="text/javascript" src="scripts/model/spotifyToken.js"></script>
-    <script type="text/javascript" src="scripts/model/createPlaylist.js"></script>
-    <script type="text/javascript" src="scripts/controller/aboutController.js"></script>
-    <script type="text/javascript" src="scripts/controller/inputController.js"></script>
-    <script type="text/javascript" src="scripts/controller/loginController.js"></script>
-    <script type="text/javascript" src="scripts/controller/resultsController.js"></script>
-    <script type="text/javascript" src="scripts/controller/routes.js"></script>
-    <script type="text/javascript" src="scripts/view/spotifyView.js"></script>
+    <script type="text/javascript" src="/scripts/model/spotify.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/model/spotifyToken.js"></script> -->
+    <script type="text/javascript" src="/scripts/model/createPlaylist.js"></script>
+    <script type="text/javascript" src="/scripts/controller/loginController.js"></script>
+    <script type="text/javascript" src="/scripts/controller/inputController.js"></script>
+    <script type="text/javascript" src="/scripts/controller/loadingController.js"></script>
+    <script type="text/javascript" src="/scripts/controller/resultsController.js"></script>
+    <script type="text/javascript" src="/scripts/controller/aboutController.js"></script>
+    <script type="text/javascript" src="/scripts/view/spotifyView.js"></script>
+    <script type="text/javascript" src="/scripts/controller/routes.js"></script>
   </body>
 </html>
