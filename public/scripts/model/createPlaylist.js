@@ -75,9 +75,11 @@ function addTracksToPlaylist(username, playlist, tracks, callback) {
 		success: function(r) {
 			console.log('add track response', r);
 			callback(r.id);
+      alert('Playlist created successfully. It is now in your Spotify library!');
 		},
 		error: function(r) {
 			callback(null);
+      alert('Playlist was not created. Please refresh your browser and try again.');
 		}
 	});
 }
