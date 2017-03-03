@@ -6,6 +6,12 @@ header {
   margin-top: 1em;
   margin-bottom: 1em;
   display: flex;
+  color: white;
+}
+
+.green-background {
+    background-color: #1DB954;
+    padding: 5%;
 }
 
 body {
@@ -59,4 +65,33 @@ footer p, img {
 
 .left {
   float: left;
+}
+
+.center {
+  text-align: center;
+}
+
+#login {
+  margin-top: 5em;
+}
+
+@media only screen and (min-width: 414px) {
+  #query1, #query2 {
+    padding: 2em;
+    margin: 1em;
+  }
+  button {
+    padding: 2em;
+    border-radius: 15px;
+  }
+}
+
+@media only screen and (max-width: 413px) {
+  #image1, #image2 {
+    display: block;
+    margin-top: 0.5em;
+    margin: 0px auto;
+    float: none;
+    clear: both;
+  }
 }
