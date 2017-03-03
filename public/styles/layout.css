@@ -46,6 +46,10 @@ footer p{
   display: inline-block;
 }
 
+.spotify-inline-block {
+  display: inline-block;
+}
+
 .header-width {
   width: 20%;
 }
@@ -86,10 +90,25 @@ footer p{
   width: 50%;
 }
 
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 374px) {
   #query1, #query2 {
     padding: 2em;
     margin: 1em;
+  }
+
+  *{
+    border: 2px solid red;
+  }
+/*
+  .inline-block {
+    display: block;
+    width: 100%;
+    padding: 5%;
+    margin: 0 0 0 5%;
+  }*/
+
+  .left {
+    float: none;
   }
   button {
     padding: 2em;

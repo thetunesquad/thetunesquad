@@ -50,6 +50,10 @@ nav ul, li {
   width: 75%;
 }
 
+#query1, #query2 {
+  text-align: center;
+}
+
 #playlist-label {
   /*display: flex;*/
   justify-content: center;
