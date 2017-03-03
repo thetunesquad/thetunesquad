@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/styles/modules.css"></link>
     <link rel="stylesheet" type="text/css" href="/styles/icons.css"></link>
     <script id="playlist-template" type="text/x-handlebars-template">
-      <li id={{preview_url}} class="icon-play3"><div class="playlist-li"> {{artists.0.name}} - {{name}}</div></li>
+      <li id={{preview_url}} class="icon-play3"><div class="playlist-li"> {{artists.0.name}} - {{name}}</div></li><br>
     </script>
   </head>
   <body>
@@ -18,7 +18,7 @@
 
       <div class="green-background">
         <header>
-          <h1 class="inline-block  header-width left">THE TUNE SQUAD</h1>
+          <h1 class="inline-block">THE TUNE SQUAD</h1>
           <nav class="inline-block spacing left">
             <ul>
               <li class="tab"><a href="/">Home</a></li>
@@ -46,8 +46,10 @@
         <img src="/images/loading.gif"/>
       </section>
       <section class="tab-content" id="results">
-        <div id="image1"><img id="image1appended" class="artist-image" src=""></div>
-        <div id="image2"><img id="image2appended" class="artist-image" src=""></div>
+        <div id="artist-image-div" class="center">
+          <img id="image1" class="artist-image" src="">
+          <img id="image2" class="artist-image" src="">
+        </div>
         <audio id="audio" src="" controls autoplay="true" paused="false">Audio player</audio>
         <h2 class="center">Playlist</h2>
         <p class="center">Click on a song to hear a preview</p>
@@ -87,10 +89,10 @@
       </section>
     </main>
     <footer>
-      <div class="flex">
-        <img class="spotify-inline-block" src="/images/Spotify_Icon_Green.png" id="logo">
-        <p class="inline-block">Powered by Spotify</p>
-      </div>
+      <!-- <div class="flex"> -->
+        <img class="spotify-inline-block logo" src="/images/Spotify_Icon_Green.png">
+        <p class="center logo">Powered by Spotify</p>
+      <!-- </div> -->
     </footer>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>

@@ -1,25 +1,65 @@
-html {
+.text-center {
+  text-align: center;
+}
+
+#group-pic {
+  width: 100%;
+}
+
+.content {
+  flex 1;
+}
+
+#about {
+  display: block;
+  padding-bottom: 100px;
+  margin-bottom: 3%;
+}
+
+.playlist-li {
+  margin: 0.5em;
+  display: inline-flex;
+  justify-content: center;
+  font-size: .5em;
+  font-family: "Helvetica Neue";
+}
+
+.inline-block {
+  margin: 0 0 0 25%;
+  width: 50%;
+}
+
+@media only screen and (min-width: 376px) {
+  #playlist {
+    width: 100%;
+  }
+  .playlist-li {
+    font-size: 1em;
+  }
+  li {
+    display: inline-flex;
+    margin: 0 0 0 38%;
+    width: 50%;
+    vertical-align: middle;
+  }
+  }
+
+/*html {
   height: 100%;
 }
 
 header {
-  margin-top: 1em;
   margin-bottom: 1em;
   display: flex;
   color: white;
-}
-
-.green-background {
-    background-color: #1DB954;
-    padding: 5%;
 }
 
 body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  /*margin-left: 5%;
-  margin-right: 5%;*/
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 footer {
@@ -34,9 +74,7 @@ footer p{
   align-items: center;
 }
 
-.content {
-  flex: 1;
-}
+
 
 .inline {
   display: inline;
@@ -44,6 +82,9 @@ footer p{
 
 .inline-block {
   display: inline-block;
+  position: absolute;
+  width: 100px;
+
 }
 
 .spotify-inline-block {
@@ -60,10 +101,6 @@ footer p{
 
 .flex {
   display: flex;
-}
-
-.text-center {
-  text-align: center;
 }
 
 .right {
@@ -90,22 +127,18 @@ footer p{
   width: 50%;
 }
 
-@media only screen and (min-width: 374px) {
-  #query1, #query2 {
-    padding: 2em;
-    margin: 1em;
-  }
+
 
   *{
     border: 2px solid red;
   }
-/*
+
   .inline-block {
     display: block;
     width: 100%;
     padding: 5%;
     margin: 0 0 0 5%;
-  }*/
+  }
 
   .left {
     float: none;
@@ -115,7 +148,7 @@ footer p{
     border-radius: 15px;
   }
 }
-/*
+
 @media only screen and (max-width: 413px) {
   #image1, #image2 {
     display: block;
