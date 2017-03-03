@@ -65,7 +65,7 @@ function searchArtist1(query1) {
       async: false,
       success: function (response) {
         relatedArtists12.push(response.artists);
-        console.log(relatedArtists12);
+        console.log('got related artists of original 2');
       }
     })
   }))
@@ -79,7 +79,7 @@ function searchArtist1(query1) {
       }
     }
     artistsAJId = AJ.slice(0, 10);
-    console.log(artistsAJId);
+    console.log('got id of 10 unique');
   })
   .done(function(){
     artistsAJId.forEach(function (id){
@@ -88,7 +88,7 @@ function searchArtist1(query1) {
         async: false,
         success: function (response) {
           relatedArtistsAJ.push(response.artists);
-          console.log(relatedArtistsAJ);
+          console.log('got related artists of 10 unique');
         }
       })
     })
@@ -100,7 +100,7 @@ function searchArtist1(query1) {
         artistsA1J5Id.push(artist.id);
       })
     })
-    console.log(artistsA1J5Id);
+    console.log('pushing ids of 50 artists');
   })
   .done(function(){
     artist12Id.forEach(function(id){
@@ -133,14 +133,28 @@ function searchArtist1(query1) {
         }
       })
     })
-    console.log(trackData);
+    console.log('got track data for final playlist');
+  }).done(function(){
+    displayPlaylist();
+    pushUri();
+    console.log('ajax call complete');
+    page('/results');
   })
-  displayPlaylist();
-  pushUri();
-  resultsController.init()
 }
 
-document.getElementById('search-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-  searchArtist1();
-}, false);
+// $('#search-form').submit(function(e) {
+//   e.preventDefault();
+// });
+//
+// $('#artist-button').on('click', function(e){
+//   //e.preventDefault();
+//   $('#input').hide();
+//   //searchArtist1();
+//   page('/loading');
+// })
+
+// document.getElementById('search-form').addEventListener('submit', function (e) {
+//   e.preventDefault();
+//   //page('/loading');
+//   loadingController.init();
+// }, false);
