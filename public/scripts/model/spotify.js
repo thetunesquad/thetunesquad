@@ -27,6 +27,9 @@
   spotify.searchArtist1 = function(query1) {
     $.ajax({
       url: 'https://api.spotify.com/v1/search',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      },
       data: {
         q: $('#query1').val(),
         type: 'artist',
@@ -46,6 +49,9 @@
     .done(function(){
       $.ajax({
         url: 'https://api.spotify.com/v1/search',
+        headers: {
+          'Authorization': 'Bearer ' + token
+        },
         data: {
           q: $('#query2').val(),
           type: 'artist',
