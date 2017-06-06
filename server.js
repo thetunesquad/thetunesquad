@@ -7,8 +7,8 @@ const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
-// const redirect_uri = process.env.REDIRECT_URI;
-const redirect_uri = 'http://localhost:7000/input';
+const redirect_uri = process.env.REDIRECT_URI;
+// const redirect_uri = 'http://localhost:7000/input';
 
 
 let generateRandomString = function(length) {
