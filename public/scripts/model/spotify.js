@@ -28,7 +28,7 @@
     $.ajax({
       url: 'https://api.spotify.com/v1/search',
       headers: {
-        'Authorization': 'Bearer ' + token
+        'Authorization': 'Bearer ' + token,
       },
       data: {
         q: $('#query1').val(),
@@ -50,7 +50,7 @@
       $.ajax({
         url: 'https://api.spotify.com/v1/search',
         headers: {
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + token,
         },
         data: {
           q: $('#query2').val(),
@@ -72,6 +72,9 @@
     .done(artist12Id.forEach(function (id){
       $.ajax({
         url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
+        headers: {
+          'Authorization': 'Bearer ' + token
+        },
         async: false,
         success: function (response) {
           relatedArtists12.push(response.artists);
@@ -95,6 +98,9 @@
       artistsAJId.forEach(function (id){
         $.ajax({
           url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
+          headers: {
+            'Authorization': 'Bearer ' + token
+          },
           async: false,
           success: function (response) {
             relatedArtistsAJ.push(response.artists);
@@ -135,6 +141,9 @@
       allId.forEach(function(id) {
         $.ajax({
           url: `https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`,
+          headers: {
+            'Authorization': 'Bearer ' + token
+          },
           async: false,
           success: function (response) {
             if (response.tracks[0]) {
