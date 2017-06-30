@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
 const redirect_uri = process.env.REDIRECT_URI;
-//const redirect_uri = 'http://localhost:7000/input';
+// const redirect_uri = 'http://localhost:7000/input';
 
 
 let generateRandomString = function(length) {
@@ -42,10 +42,11 @@ app.get('/login', function(req, res) {
 
  // your application requests authorization
   let scope = 'playlist-modify-public';
-  res.redirect('https://accounts.spotify.com/authorize?' +
+  res.redirect('https://accounts.spotify.com/authorize' +
    querystring.stringify({
      response_type: 'code',
      client_id: client_id,
+     client_secret: client_secret,
      scope: scope,
      redirect_uri: redirect_uri,
      state: state

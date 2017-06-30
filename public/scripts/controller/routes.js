@@ -2,7 +2,7 @@
 
 let token;
 
-page('/', inputController.init);
+page('/', loginController.init);
 page('/token/:token', function(ctx) {
   console.log(ctx.params.token);
   token = ctx.params.token;
