@@ -1,13 +1,13 @@
 # thetunesquad
-##CodeFellows 301 group project
+## CodeFellows 301 group project
 
-##General Information
+## General Information
 ---
 * Team Name: The Tune Squad
 * Team Members: Alex Cahn, Allie Grampa, Christina Lee, and Kyle Hillman
 * Project Concept: Application that takes two musical artists, and creates a playlist based on top songs by similar artists.
 
-###Project Domain Model:
+### Project Domain Model:
 ---
 Our original idea for this app was centered around 2 people going on a road trip. These people had different tastes in music, and needed a way to easily create a playlist that both would enjoy. After much deliberation, we came up with The Tune Squad: a mobile first application using responsive web design and the Spotify API. We use jQuery AJAX calls to the API and return data asynchronously to keep our app on a single page. In order to tap into the API and create a playlist, the user has to login with their Spotify username and password. After that, they are free to play around and make as many playlists as they choose.  We manipulate the data that comes back so that there will be no repeat artists in the playlist. The artists, related artists, and most popular songs are updated with the API, which means the playlist you get back one day will be different the next, even if you input the same artists.
 
