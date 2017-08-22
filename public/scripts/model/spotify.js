@@ -32,6 +32,10 @@
         type: 'artist',
         limit: 1
       },
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json',
+      },
       async: false,
       success: function (response) {
         if(response.artists.items.length > 0) {
