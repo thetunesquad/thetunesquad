@@ -33,7 +33,7 @@
         limit: 1
       },
       headers: {
-        'Authorization': `Bearer ${CLIENT_ID}`,
+        'Authorization': 'Bearer cac843d7284a492aa07e28bf104dfcec',
         'Content-Type': 'application/json',
       },
       async: false,
