@@ -33,7 +33,7 @@
         limit: 1
       },
       headers: {
-        Authorization: 'Bearer bd56804a81f3496e909d25ae1ee01481',
+        'Authorization': 'Bearer bd56804a81f3496e909d25ae1ee01481',
       },
       async: false,
       success: function (response) {
@@ -54,6 +54,9 @@
           type: 'artist',
           limit: 1
         },
+        headers: {
+          'Authorization': 'Bearer bd56804a81f3496e909d25ae1ee01481',
+        },
         async: false,
         success: function (response) {
           if(response.artists.items.length > 0) {
@@ -69,6 +72,9 @@
     .done(artist12Id.forEach(function (id){
       $.ajax({
         url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
+        headers: {
+          'Authorization': 'Bearer bd56804a81f3496e909d25ae1ee01481',
+        },
         async: false,
         success: function (response) {
           relatedArtists12.push(response.artists);
@@ -92,6 +98,9 @@
       artistsAJId.forEach(function (id){
         $.ajax({
           url: `https://api.spotify.com/v1/artists/${id}/related-artists`,
+          headers: {
+            'Authorization': 'Bearer bd56804a81f3496e909d25ae1ee01481',
+          },
           async: false,
           success: function (response) {
             relatedArtistsAJ.push(response.artists);
@@ -132,6 +141,9 @@
       allId.forEach(function(id) {
         $.ajax({
           url: `https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`,
+          headers: {
+            'Authorization': 'Bearer bd56804a81f3496e909d25ae1ee01481',
+          },
           async: false,
           success: function (response) {
             if (response.tracks[0]) {
