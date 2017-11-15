@@ -33,7 +33,7 @@
         limit: 1
       },
       headers: {
-        Authorization: 'token cac843d7284a492aa07e28bf104dfcec',
+        Authorization: 'Bearer cac843d7284a492aa07e28bf104dfcec',
       },
       async: false,
       success: function (response) {
