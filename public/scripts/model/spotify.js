@@ -33,7 +33,7 @@
         limit: 1
       },
       headers: {
-        'Authorization': 'Bearer ' + token,
+        'Authorization': 'Bearer ' + process.env.CLIENT_ID,
         'Content-Type': 'application/json',
       },
       async: false,

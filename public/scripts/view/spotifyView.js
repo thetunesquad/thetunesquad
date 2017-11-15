@@ -30,10 +30,3 @@ $('#reset-button').on('click', function(){
   $('#query2').empty();
   page('/input');
 });
-
-//
-//
-// $('.icon-play3').on('click', function(e) {
-//   console.log(this.id);
-//   $('#audio').attr('src', this.id);
-// });

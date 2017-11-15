@@ -25,11 +25,6 @@ let stateKey = 'spotify_auth_state';
 
 const app = express();
 const PORT = process.env.PORT || 7000;
-const conString = process.env.DATABASE_URL || 'postgres://localhost:5432';
-const client = new pg.Client(conString);
-
-
-client.connect();
 
 app.use(express.static('./public'))
    .use(cookieParser());
