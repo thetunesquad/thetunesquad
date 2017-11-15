@@ -33,8 +33,7 @@
         limit: 1
       },
       headers: {
-        'Authorization': 'Bearer cac843d7284a492aa07e28bf104dfcec',
-        'Content-Type': 'application/json',
+        Authorization: 'token cac843d7284a492aa07e28bf104dfcec',
       },
       async: false,
       success: function (response) {
